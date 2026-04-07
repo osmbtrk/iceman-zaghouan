@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ShoppingCart, Send } from "lucide-react";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const QuickOrder = () => {
   const [product, setProduct] = useState("glacons");
@@ -11,13 +12,12 @@ const QuickOrder = () => {
   const currentPackaging = product === "glacons" ? glaconsPackaging : pileePackaging;
 
   const handleOrder = () => {
-    const productName = product === "glacons" ? "Glaçons" : "Glace Pilée";
+    const productName = product === "glacons" ? "Glaçons" : "Glace pilée";
     const pack = packaging || currentPackaging[0];
     const qty = quantity || "1";
-    const text = encodeURIComponent(
-      `Bonjour, je souhaite commander :\nProduit : ${productName}\nConditionnement : ${pack}\nQuantité : ${qty} sac(s)`
-    );
-    window.open(`https://wa.me/21625252050?text=${text}`, "_blank");
+    const message = `Bonjour, je souhaite commander ${productName} (${pack}) - Quantité: ${qty} sacs.`;
+
+    window.open(buildWhatsAppUrl(message), "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -49,7 +49,10 @@ const QuickOrder = () => {
                 <div className="grid grid-cols-2 gap-3">
                   <button
                     type="button"
-                    onClick={() => { setProduct("glacons"); setPackaging(""); }}
+                    onClick={() => {
+                      setProduct("glacons");
+                      setPackaging("");
+                    }}
                     className={`py-4 rounded-xl font-heading font-bold text-sm transition-all ${
                       product === "glacons"
                         ? "bg-gradient-ice text-primary ice-shadow"
@@ -60,7 +63,10 @@ const QuickOrder = () => {
                   </button>
                   <button
                     type="button"
-                    onClick={() => { setProduct("pilee"); setPackaging(""); }}
+                    onClick={() => {
+                      setProduct("pilee");
+                      setPackaging("");
+                    }}
                     className={`py-4 rounded-xl font-heading font-bold text-sm transition-all ${
                       product === "pilee"
                         ? "bg-gradient-ice text-primary ice-shadow"
