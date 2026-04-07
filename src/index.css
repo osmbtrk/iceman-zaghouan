@@ -116,3 +116,7 @@
     box-shadow: 0 10px 40px -10px hsla(205, 85%, 55%, 0.3);
   }
 }
+
+#lovable-badge {
+  display: none !important;
+}
