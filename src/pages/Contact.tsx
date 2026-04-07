@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { Phone, MapPin, MessageCircle, Send } from "lucide-react";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Nom: ${form.name}%0ATéléphone: ${form.phone}%0AMessage: ${form.message}`;
-    window.open(`https://wa.me/21625252050?text=${text}`, "_blank");
+
+    const message = `Nom: ${form.name}\nTéléphone: ${form.phone}\nMessage: ${form.message}`;
+    window.open(buildWhatsAppUrl(message), "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -26,7 +28,6 @@ const Contact = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            {/* Info */}
             <div className="space-y-8">
               <div>
                 <h2 className="font-heading font-bold text-2xl text-foreground mb-6">Informations</h2>
@@ -62,7 +63,7 @@ const Contact = () => {
               </div>
 
               <a
-                href={`https://wa.me/21625252050?text=${encodeURIComponent("Bonjour, je souhaite commander de la glace.")}`}
+                href={buildWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-[hsl(142,70%,45%)] text-[hsl(0,0%,100%)] font-heading font-bold px-6 py-4 rounded-xl hover:opacity-90 transition-all w-full"
@@ -77,7 +78,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Form */}
             <div>
               <h2 className="font-heading font-bold text-2xl text-foreground mb-6">Envoyez un message</h2>
               <form onSubmit={handleSubmit} className="space-y-5">

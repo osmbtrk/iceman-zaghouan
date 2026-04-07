@@ -1,10 +1,9 @@
 import { MessageCircle } from "lucide-react";
-
-const WHATSAPP_URL = "https://wa.me/21625252050?text=" + encodeURIComponent("Bonjour, je souhaite commander de la glace.");
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const WhatsAppButton = () => (
   <a
-    href={WHATSAPP_URL}
+    href={buildWhatsAppUrl()}
     target="_blank"
     rel="noopener noreferrer"
     className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[hsl(142,70%,45%)] hover:bg-[hsl(142,70%,40%)] text-[hsl(0,0%,100%)] font-heading font-bold px-5 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"

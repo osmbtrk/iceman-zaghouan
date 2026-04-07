@@ -2,10 +2,10 @@ import { MessageCircle, ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 import logo from "@/assets/logo.png";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-    {/* Background */}
     <div className="absolute inset-0">
       <img src={heroBg} alt="" className="w-full h-full object-cover" width={1920} height={1080} />
       <div className="absolute inset-0 bg-gradient-navy/80" />
@@ -37,7 +37,7 @@ const HeroSection = () => (
           Commander maintenant
         </Link>
         <a
-          href={`https://wa.me/21625252050?text=${encodeURIComponent("Bonjour, je souhaite commander de la glace.")}`}
+          href={buildWhatsAppUrl()}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 frost-glass text-ice-light font-heading font-bold text-lg px-8 py-4 rounded-full hover:bg-secondary/20 transition-all"
