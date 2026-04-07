@@ -8,14 +8,14 @@ const products = [
     name: "Glaçons",
     img: glaconsImg,
     desc: "Nos glaçons sont produits quotidiennement avec de l'eau purifiée pour garantir une transparence et une pureté exceptionnelles. Idéaux pour les boissons, la conservation alimentaire et les événements.",
-    packaging: "Disponible en sacs de 2kg, 5kg et 10kg",
+    packaging: "Disponible en sacs de 1.5 KG, 5 KG et 10 KG",
     uses: ["Restaurants & cafés", "Événements", "Épiceries", "Poissonneries"],
   },
   {
     name: "Glace Pilée",
     img: glacePileeImg,
     desc: "Notre glace pilée est finement broyée pour une utilisation polyvalente. Parfaite pour la présentation des produits de la mer, les cocktails et la conservation au froid.",
-    packaging: "Disponible en sacs de 5kg, 10kg et 25kg",
+    packaging: "Disponible en sacs de 2 KG, 5 KG, 10 KG et 50 KG",
     uses: ["Poissonneries", "Marchés", "Cocktails", "Conservation"],
   },
 ];

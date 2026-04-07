@@ -3,11 +3,20 @@ import { ShoppingCart, Send } from "lucide-react";
 
 const QuickOrder = () => {
   const [product, setProduct] = useState("glacons");
-  const [quantity, setQuantity] = useState("1");
+  const [quantity, setQuantity] = useState("");
+  const [packaging, setPackaging] = useState("");
+
+  const glaconsPackaging = ["1.5 KG", "5 KG", "10 KG"];
+  const pileePackaging = ["2 KG", "5 KG", "10 KG", "50 KG"];
+  const currentPackaging = product === "glacons" ? glaconsPackaging : pileePackaging;
 
   const handleOrder = () => {
     const productName = product === "glacons" ? "Glaçons" : "Glace Pilée";
-    const text = `Bonjour, je souhaite commander :%0AProduit : ${productName}%0AQuantité : ${quantity} sac(s)`;
+    const pack = packaging || currentPackaging[0];
+    const qty = quantity || "1";
+    const text = encodeURIComponent(
+      `Bonjour, je souhaite commander :\nProduit : ${productName}\nConditionnement : ${pack}\nQuantité : ${qty} sac(s)`
+    );
     window.open(`https://wa.me/21625252050?text=${text}`, "_blank");
   };
 
@@ -40,7 +49,7 @@ const QuickOrder = () => {
                 <div className="grid grid-cols-2 gap-3">
                   <button
                     type="button"
-                    onClick={() => setProduct("glacons")}
+                    onClick={() => { setProduct("glacons"); setPackaging(""); }}
                     className={`py-4 rounded-xl font-heading font-bold text-sm transition-all ${
                       product === "glacons"
                         ? "bg-gradient-ice text-primary ice-shadow"
@@ -51,7 +60,7 @@ const QuickOrder = () => {
                   </button>
                   <button
                     type="button"
-                    onClick={() => setProduct("pilee")}
+                    onClick={() => { setProduct("pilee"); setPackaging(""); }}
                     className={`py-4 rounded-xl font-heading font-bold text-sm transition-all ${
                       product === "pilee"
                         ? "bg-gradient-ice text-primary ice-shadow"
@@ -64,18 +73,35 @@ const QuickOrder = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Quantité (sacs)</label>
-                <select
+                <label className="block text-sm font-medium text-foreground mb-2">Conditionnement</label>
+                <div className="flex flex-wrap gap-2">
+                  {currentPackaging.map((p) => (
+                    <button
+                      key={p}
+                      type="button"
+                      onClick={() => setPackaging(p)}
+                      className={`px-4 py-2.5 rounded-xl font-heading font-bold text-sm transition-all ${
+                        (packaging || currentPackaging[0]) === p
+                          ? "bg-gradient-ice text-primary ice-shadow"
+                          : "bg-muted text-muted-foreground hover:bg-accent"
+                      }`}
+                    >
+                      {p}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">Quantité (nombre de sacs)</label>
+                <input
+                  type="number"
+                  min="1"
                   value={quantity}
                   onChange={(e) => setQuantity(e.target.value)}
+                  placeholder="Ex: 10"
                   className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground focus:ring-2 focus:ring-secondary outline-none transition-all"
-                >
-                  {[1, 2, 3, 5, 10, 20, 50].map((n) => (
-                    <option key={n} value={n}>
-                      {n} sac{n > 1 ? "s" : ""}
-                    </option>
-                  ))}
-                </select>
+                />
               </div>
 
               <button

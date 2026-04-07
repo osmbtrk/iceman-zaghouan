@@ -62,7 +62,7 @@ const Contact = () => {
               </div>
 
               <a
-                href="https://wa.me/21625252050"
+                href={`https://wa.me/21625252050?text=${encodeURIComponent("Bonjour, je souhaite commander de la glace.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-[hsl(142,70%,45%)] text-[hsl(0,0%,100%)] font-heading font-bold px-6 py-4 rounded-xl hover:opacity-90 transition-all w-full"

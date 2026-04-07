@@ -14,7 +14,7 @@ const AboutSection = () => (
     </div>
     <div className="container mx-auto px-4 relative">
       <h2 className="font-heading font-black text-3xl md:text-4xl text-center text-ice-light mb-4">
-        Pourquoi <span className="text-gradient-ice">Iceman Zaghouan</span> ?
+        Pourquoi <span className="text-gradient-ice">Iceman</span> ?
       </h2>
       <p className="text-center text-ice-glow/60 mb-14 max-w-xl mx-auto">
         Le partenaire de confiance pour vos besoins en glace
