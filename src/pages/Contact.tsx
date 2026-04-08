@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, MapPin, MessageCircle, Send } from "lucide-react";
+import { Phone, MapPin, MessageCircle, Send, Facebook, Instagram } from "lucide-react";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const Contact = () => {
