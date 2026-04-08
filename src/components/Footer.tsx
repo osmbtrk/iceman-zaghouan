@@ -34,6 +34,14 @@ const Footer = () => (
             <div className="flex items-center gap-2 text-ice-glow/70">
               <MapPin className="w-4 h-4" /> Zaghouan, Tunisie
             </div>
+            <div className="flex items-center gap-3 pt-3">
+              <a href="https://www.facebook.com/profile.php?id=61574435980331" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-secondary/20 flex items-center justify-center text-ice-glow/70 hover:text-accent hover:bg-secondary/40 transition-all">
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a href="https://www.instagram.com/iceman_zg/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-secondary/20 flex items-center justify-center text-ice-glow/70 hover:text-accent hover:bg-secondary/40 transition-all">
+                <Instagram className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
