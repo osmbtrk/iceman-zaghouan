@@ -79,7 +79,7 @@ const Contact = () => {
 
               <div className="space-y-3">
                 <h3 className="font-heading font-bold text-lg text-foreground">Suivez-nous</h3>
-                <div className="flex gap-3">
+                <div className="flex flex-wrap gap-3">
                   <a href="https://www.facebook.com/profile.php?id=61574435980331" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-3 rounded-xl border border-border bg-card text-foreground hover:text-secondary hover:border-secondary transition-all">
                     <Facebook className="w-5 h-5" />
                     Facebook
@@ -87,6 +87,10 @@ const Contact = () => {
                   <a href="https://www.instagram.com/iceman_zg/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-3 rounded-xl border border-border bg-card text-foreground hover:text-secondary hover:border-secondary transition-all">
                     <Instagram className="w-5 h-5" />
                     Instagram
+                  </a>
+                  <a href={buildWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-3 rounded-xl border border-border bg-card text-foreground hover:text-[hsl(142,70%,45%)] hover:border-[hsl(142,70%,45%)] transition-all">
+                    <MessageCircle className="w-5 h-5" />
+                    WhatsApp
                   </a>
                 </div>
               </div>
