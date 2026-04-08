@@ -72,9 +72,9 @@ const Contact = () => {
                 Écrire sur WhatsApp
               </a>
 
-              <div className="frost-glass bg-gradient-navy rounded-2xl p-6">
-                <p className="text-sm text-ice-glow/70 mb-1">Gérant</p>
-                <p className="font-heading font-bold text-ice-light text-lg">Atef Ben Torkia</p>
+              <div className="rounded-2xl p-6 border border-border bg-card">
+                <p className="text-sm text-muted-foreground mb-1">Gérant</p>
+                <p className="font-heading font-bold text-foreground text-lg">Atef Ben Torkia</p>
               </div>
 
               <div className="space-y-3">
