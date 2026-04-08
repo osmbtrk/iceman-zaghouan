@@ -1,5 +1,6 @@
-import { Phone, MapPin, Facebook, Instagram } from "lucide-react";
+import { Phone, MapPin, Facebook, Instagram, MessageCircle } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const Footer = () => (
   <footer className="bg-gradient-navy text-ice-light">
@@ -40,6 +41,9 @@ const Footer = () => (
               </a>
               <a href="https://www.instagram.com/iceman_zg/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-secondary/20 flex items-center justify-center text-ice-glow/70 hover:text-accent hover:bg-secondary/40 transition-all">
                 <Instagram className="w-4 h-4" />
+              </a>
+              <a href={buildWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-secondary/20 flex items-center justify-center text-ice-glow/70 hover:text-[hsl(142,70%,45%)] hover:bg-secondary/40 transition-all">
+                <MessageCircle className="w-4 h-4" />
               </a>
             </div>
           </div>
