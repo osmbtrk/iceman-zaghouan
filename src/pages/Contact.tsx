@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, MapPin, MessageCircle, Send } from "lucide-react";
+import { Phone, MapPin, MessageCircle, Send, Facebook, Instagram } from "lucide-react";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const Contact = () => {
@@ -75,6 +75,20 @@ const Contact = () => {
               <div className="frost-glass bg-gradient-navy rounded-2xl p-6">
                 <p className="text-sm text-ice-glow/70 mb-1">Gérant</p>
                 <p className="font-heading font-bold text-ice-light text-lg">Atef Ben Torkia</p>
+              </div>
+
+              <div className="space-y-3">
+                <h3 className="font-heading font-bold text-lg text-foreground">Suivez-nous</h3>
+                <div className="flex gap-3">
+                  <a href="https://www.facebook.com/profile.php?id=61574435980331" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-3 rounded-xl border border-border bg-card text-foreground hover:text-secondary hover:border-secondary transition-all">
+                    <Facebook className="w-5 h-5" />
+                    Facebook
+                  </a>
+                  <a href="https://www.instagram.com/iceman_zg/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-3 rounded-xl border border-border bg-card text-foreground hover:text-secondary hover:border-secondary transition-all">
+                    <Instagram className="w-5 h-5" />
+                    Instagram
+                  </a>
+                </div>
               </div>
             </div>
 
