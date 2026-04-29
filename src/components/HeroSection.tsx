@@ -22,7 +22,7 @@ const HeroSection = () => (
       <img
         src={logo}
         alt="Iceman Zaghouan"
-        className="mx-auto h-32 md:h-44 w-auto mb-8 drop-shadow-xl"
+        className="mx-auto h-48 md:h-64 w-auto mb-8 drop-shadow-2xl animate-float"
       />
 
       <h1 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl leading-tight text-ice-light max-w-3xl mx-auto mb-5">
